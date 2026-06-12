@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Materi OOP: Konstruktor & Enkapsulasi</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: auto; background-color: #f4f4f9; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        code { font-family: monospace; }
+    </style>
+</head>
+<body>
+
+    <h1>Materi PBO: Konstruktor & Enkapsulasi</h1>
+
+    <div class="card">
+        <h2>1. Konstruktor</h2>
+        <p>Konstruktor adalah metode khusus yang dipanggil otomatis saat objek dibuat untuk inisialisasi awal.</p>
+        <pre><code>
+class Produk {
+  String nama;
+  double harga;
+
+  // Konstruktor berparameter
+  Produk(this.nama, this.harga);
+}
+        </code></pre>
+    </div>
+
+    <div class="card">
+        <h2>2. Enkapsulasi</h2>
+        <p>Enkapsulasi menyembunyikan data sensitif menggunakan <code>_</code> (underscore) agar bersifat private.</p>
+        <pre><code>
+class Pengguna {
+  String _nama; // Private
+
+  Pengguna(this._nama);
+
+  // Getter
+  String get nama => _nama;
+}
+        </code></pre>
+    </div>
+
+    <!-- Referensi Visual -->
+    <div class="card">
+        <h2>Visualisasi Konsep</h2>
+        <p>Berikut adalah ringkasan visual dari materi yang kita bahas:</p>
+        <img src="679942340414142942.jpeg" alt="Visualisasi Konstruktor dan Enkapsulasi" style="max-width: 100%; border-radius: 5px;">
+    </div>
+
+</body>
+</html>
