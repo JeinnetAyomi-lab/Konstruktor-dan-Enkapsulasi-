@@ -1,34 +1,43 @@
-class Mahasiswa {
-  // Enkapsulasi: variabel private dengan underscore (_)
-  String _nama;
-  int _nilai;
-
+// Kelas dengan Enkapsulasi
+class User {
+  String _name; // Data disembunyikan (Private)
+  
   // Konstruktor
-  Mahasiswa(this._nama, this._nilai);
+  User(this._name);
 
   // Getter
-  String get nama => _nama;
-  int get nilai => _nilai;
+  String get name => _name;
 
   // Setter dengan validasi
-  set nilai(int nilaiBaru) {
-    if (nilaiBaru >= 0 && nilaiBaru <= 100) {
-      _nilai = nilaiBaru;
+  set name(String newName) {
+    if (newName.isNotEmpty) {
+      _name = newName;
     } else {
-      print("Nilai tidak valid!");
+      print("Nama tidak boleh kosong!");
     }
-  }
-
-  void tampilkanInfo() {
-    print("Mahasiswa: $_nama, Nilai: $_nilai");
   }
 }
 
+// Kelas dengan Konstruktor Khusus (Named Constructor)
+class Product {
+  String name;
+  double price;
+
+  Product(this.name, this.price);
+
+  // Named Constructor
+  Product.diskon(this.name) : price = 0.0;
+}
+
 void main() {
-  var mhs = Mahasiswa("Budi", 85);
-  mhs.tampilkanInfo();
+  // 1. Implementasi Konstruktor
+  var p1 = Product("Smartphone", 5000000);
+  print("Produk: ${p1.name}, Harga: ${p1.price}");
+
+  // 2. Implementasi Enkapsulasi
+  var user = User("Jeinnet");
+  print("User awal: ${user.name}");
   
-  // Menggunakan setter
-  mhs.nilai = 95;
-  print("Nilai setelah diupdate: ${mhs.nilai}");
+  user.name = "Jeinnet Verara Ayomi"; // Menggunakan Setter
+  print("User update: ${user.name}");
 }
